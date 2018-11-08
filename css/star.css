@@ -1,0 +1,52 @@
+.stars {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: -4;
+}
+
+.blink, .blink_2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 100%;
+  
+  opacity: 0;
+  
+  background: url('../img/stars1.png');
+  
+  -webkit-animation: stars 10s linear infinite;
+  animation: stars 10s linear infinite;
+}
+
+.blink_2 {
+  background-position: 100px 100px;
+  background-image: url('../img/stars2.png');
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  width: 100%;
+  height: 100%;
+  z-index: -5;
+}
+
+@-webkit-keyframes stars {
+  0%, 50%, 100% {opacity: 0;}
+  25%, 75% {opacity: 1;}
+}
+
+@keyframes stars {
+  0%, 50%, 100% {opacity: 0;}
+  25%, 75% {opacity: 1;}
+}
