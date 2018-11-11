@@ -41,12 +41,12 @@
 						<img src="./img/js.png">
 						<img src="./img/adobe.png">
 					</div>
-					<div class='background'>About</div>
+					<div class='about'>About</div>
 				</div>
 				<div class='rightHalf'> 
 					<p class="title">Contact Us</p>
 					<p class="text">No spam, just freandly talk</p>
-					<form id='form' action='' onsubmit="return commonValidation(event)">
+					<form id='form'>
 						<input type="text" id='name' placeholder="Name"">
 						<input type="text" id='email' placeholder="E-mail">
 						<div id='checkboxContainer'>
@@ -69,7 +69,7 @@
 						</div>
 						<input type="text" placeholder="Message">
 					</form>
-					<a href="#" id='sendMessage'>Send Message</a>
+					<button id='sendMessage' onclick="commonValidation(event)">Send Message</button>
 					<div class='contact'>Conta</div>
 					<div class='img_earth'></div>
 					<div class='star-background'></div>

@@ -1,13 +1,13 @@
 
 html{
-  height: 100%;
+  min-height: 100vh;
 }
 body {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
 .overlay{
   background: rgb(29,29,37);
@@ -21,6 +21,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   width: 85%;
+  min-height: 410px;
  }
 
 .cards{
@@ -29,14 +30,14 @@ body {
   justify-content: space-between;
   align-items: stretch;
 	width: 75%;
+  max-width: 1100px;
   height: 70%;
-
+  min-height: 300px;
 }
 .card {
     transform: translate(0%,0%);
     width: calc(50% - 10px);
-    height: 55%;
-    margin-bottom: 20px;
+    height: 45%;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -48,20 +49,21 @@ body {
     box-sizing: border-box;
     transition: .75s;
 }
-.card .imgBx {
-    top: 0;
-    left: 0;
+.card .imgBx{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.card .imgBx img {
-    width: 100%;
-    height: 100%;
+.card:nth-child(-n+2) .imgBx{
+  background-image: url('../img/1.jpg')
+}
+.card:nth-child(n+3) .imgBx{
+  background-image: url('../img/2.jpg')
 }
 .card .details {
     top: 0;
-    opacity: 0.9;
     left: 100%;
-    padding: 10% 5%;
+    color: white;
 }
 .details.turquoise{
   background-color: turquoise;
@@ -70,15 +72,11 @@ body {
   background-color: pink;
 }
 .card:hover .details {
+    opacity: 0.9; 
     left: 0%;
 }
-.card .details {
-    color: #fff;
-}
-.card .details p{
-  position: absolute;
-  top:70%;
-  font-size: 60px;
+.card .details .arrow{
+  //position: absolute;
 }
 
 .icon{

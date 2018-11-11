@@ -1,13 +1,26 @@
+var slideCount;
+var slideWidth;
+var slideHeight;
+var sliderUlWidth;
+var minHeight=550;;//>minHeight?$('.main').height()*0.7:minHeight
 jQuery(document).ready(function ($) {
+    $('#slider ul li').height(650);
+    $('#slider ul li').width($('.main').width());
+
+    resizeFont('.slide', '.caption', 30, 40);
+    resizeFont('.slide', '.description',15, 200);
+    resizeFont('.slide', '.number',110, 10);
+    $('.number').css('top', - $('.slide').width()/25 - 45);
+    $('.caption').css('padding-top', resizeFont('.slide', '.number',110, 10) + parseInt($('.number').css('top'),10) + 'px');
 
     setInterval(function () {
        moveRight();
     }, 3000);
-  
-	var slideCount = $('#slider ul li').length;
-	var slideWidth = $('#slider ul li').width();
-	var slideHeight = $('#slider ul li').height();
-	var sliderUlWidth = slideCount * slideWidth;
+    
+	slideCount = $('#slider ul li').length;
+	slideWidth = $('#slider ul li').width();
+	slideHeight = $('#slider ul li').height();
+	sliderUlWidth = slideCount * slideWidth;
 	
 	$('#slider').css({ width: slideWidth, height: slideHeight });
 	
@@ -45,4 +58,33 @@ jQuery(document).ready(function ($) {
         moveRight();
     });
 
-});    
+});   
+function resizeFont(parent, elem, defaultSize, speedChange){
+    var fontSize = $(parent).width()/speedChange+defaultSize;
+    $(elem).css({
+        'font-size':$(parent).width()/speedChange+defaultSize+'px',
+    });
+    return fontSize;
+} 
+$(window).resize(function(event) {
+
+    $('#slider ul li').width($('.main').width());
+
+    slideCount = $('#slider ul li').length;
+    slideWidth = $('#slider ul li').width();
+    slideHeight = $('#slider ul li').height();
+    sliderUlWidth = slideCount * slideWidth;
+
+    $('#slider').width($('#slider ul li').width());
+    $('#slider ul').css({
+        'marginLeft':-$('.main').width(),
+        'width': sliderUlWidth
+    });
+
+    resizeFont('.slide', '.caption', 30, 40);
+    resizeFont('.slide', '.description',15, 200);
+    resizeFont('.slide', '.number',110, 10);
+
+    $('.number').css('top', - $('.slide').width()/25 - 45);
+    $('.caption').css('padding-top', resizeFont('.slide', '.number',110, 10) + parseInt($('.number').css('top'),10) + 'px');
+});

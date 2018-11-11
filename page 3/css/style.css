@@ -1,21 +1,25 @@
 
 html{
-  height: 100vh;
+  min-height: 100vh;
 }
 body {
   display: flex;
   position: relative;
   justify-content: center;
+  align-items: flex-start;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+
 }
  .main{
  	display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  width: 85%;
- }
+  width: calc(50% + 150px);
+  height: 90%;
+  padding-bottom: 5%;
+}
 .overlay {
   background: radial-gradient(#1d4769, #0c2132);
 }
@@ -40,60 +44,79 @@ body {
   position: relative;
   display: block;
   float: left;
-  width: 1200px;
-  height: 623px;
 }
 .slide{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 80%;
   color: white;
 
 }
 .slide1{
-  background: rgba(58, 166,169,0.7);
+  background: rgba(58, 166,169,0.9);
 }
 .slide2{
-  background: rgba(62, 175,129,0.7);
+  background: rgba(62, 175,129,0.9);
 }
 .slide3{
-  background: rgba(228, 124,69,0.7);
+  background: rgba(228, 124,69,0.9);
 }
 .slide4{
-  background: rgba(202, 89,133,0.7);
+  background: rgba(202, 89,133,0.9);
 }
-.slide>.img, .slide>.background{
+.slide>.background{
+
   position: absolute;
   height: 100%;
   width: 100%;
-}
-.slide>.img{
-  z-index: -3;
-}
-.slide>.background{
-  z-index: -2;
+  background-image: url('../img/earth.png'), url('../img/stars.png');
+  background-size: contain;
+  background-repeat: no-repeat repeat;
+  background-position: bottom right, top left;
   opacity: 0.5;
+  z-index: 0;
 }
+.slide>.backgroundSlide1, .slide>.backgroundSlide2, .slide>.backgroundSlide3, .slide>.backgroundSlide4{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slide>.backgroundSlide1{
+  background-image: url('../img/1.jpg');
+}
+.slide>.backgroundSlide2{
+  background-image: url('../img/2.jpg');
+}
+.slide>.backgroundSlide3{
+  background-image: url('../img/3.jpg');
+}
+.slide>.backgroundSlide4{
+  background-image: url('../img/4.jpg');
+}
+
 .slide>.content{
-  padding: 50px 40px;
+  padding: 5% calc(3% + 15px);
+  display: flex;
+  flex-direction: column;
 }
 .content>.caption{
   font-family: "HurmeGeometricSans-Bold";
-  padding-top: 200px;
-  font-size: 65px;
 }
 .content>.description{
-  width: 60%;
-  padding-top: 20px;
-  font-size: 19px;
+  width: 90%;
+  padding-top: 3%;
   line-height: 1.8;
 }
 .content>a{
   text-decoration: none;
 }
 .content>.button{
-  position: absolute;
-  bottom: 90px;
+  position: relative;
+  margin-top: 30px;
   white-space: nowrap;
   width: 100px;
   border: 2px solid white;
@@ -117,8 +140,6 @@ body {
 .number{
   position: absolute;
   font-family: "HurmeGeometricSans-Bold";
-  font-size: 220px;
-  top: -90px;
   right: 0;
   text-shadow: 3px 3px 10px rgba(0,0,0, 0.4);
 }

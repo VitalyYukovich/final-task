@@ -1,181 +1,217 @@
-
-html{
-  height: 100vh;
+html {
+  min-height: 100vh;
 }
+
 body {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
- .main{
- 	display: flex;
+
+.main {
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: 85%;
-  height: 100%;
- }
- .overlay {
-  background: rgb(29,29,37);
+  width: 100%;
+  min-height: 100%;
+  margin: 50px calc(10px + 1%) 40px calc(10px + 1%);
 }
- .icon{
-    fill: #777;
+
+.overlay {
+  background: rgb(29, 29, 37);
 }
-.icon:hover{
-    fill: #aaa;
+
+.icon {
+  fill: #777;
 }
+
+.icon:hover {
+  fill: #aaa;
+}
+
 .card {
   display: flex;
   position: relative;
-  width: 75%;
-  height: 85%;
-  box-shadow: 10px 10px 20px rgb(0,0,0, 0.1);
+  min-height: 90%;
+  box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.1);
+  max-width: 1200px;
 }
-.leftHalf, .rightHalf{
+.leftHalf,
+.rightHalf {
+  padding: 10% 4% 2% 4%;
+
   width: 50%;
-  height: 80%;
-}
-.leftHalf{
-  position: relative;
-  padding: 160px 80px 0px 80px;
-  background-color: rgb(237,237,237);
-  overflow: hidden;
 }
 
-.leftHalf>.title, .rightHalf>.title{
-   font-family: "HurmeGeometricSans-Bold";
-   font-size: 25px;
-   padding-bottom: 10px;
+.leftHalf {
+  float: left;
+  position: relative;
+  background-color: rgb(237, 237, 237);
 }
-.leftHalf>.subtitle{
-   font-family: "HurmeGeometricSans-Bold";
-   font-size: 16px;
-   width: 60%;
-   padding-bottom: 20px;
+
+.leftHalf>.title,
+.rightHalf>.title {
+  font-family: "HurmeGeometricSans-Bold";
+  font-size: 25px;
+  padding-bottom: 10px;
 }
-.leftHalf>.text, .rightHalf>.text{
-    font-size: 13px;
-    line-height: 1.7;
+
+.leftHalf>.subtitle {
+  font-family: "HurmeGeometricSans-Bold";
+  font-size: 16px;
+  width: 60%;
+  padding-bottom: 20px;
 }
-.leftHalf>.technology{
-    padding-top: 40px;
-    margin: 0 auto;
-    display: flex;
-    width: 80%;
-    height: 50px;
-    justify-content: space-between;
-    align-items: center;
+
+.leftHalf>.text,
+.rightHalf>.text {
+  font-size: 13px;
+  line-height: 1.7;
 }
-.technology>img{
-  height: 100%;
-  width: auto;
+
+.leftHalf>.technology {
+  padding-top: 15%;
+  margin: 0 auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
 }
-.leftHalf>.background{
+
+.technology>img {
+  height: auto;
+  width: 15%;
+}
+
+.leftHalf>.about{
   position: absolute;
   font-family: "HurmeGeometricSans-Bold";
-  font-size: 217px;
-  top: -33px;
-  left: 121px;
   opacity: 0.06;
 }
-.rightHalf{
+.rightHalf>.contact {
+  position: absolute;
+  font-family: "HurmeGeometricSans-Bold";
+  opacity: 0.03;
+  z-index: -1;
+}
+
+.rightHalf {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 160px 80px 0px 80px;
   color: white;
+  z-index: 1;
 }
-form>input[type=text]{
-  width:93%;
+
+form>input[type=text] {
+  width: 85%;
   border: none;
   border-bottom: 1px solid #bbb;
-  background:none;
-  margin-top:25px;
-  padding: 15px;
-  outline:none;
+  background: none;
+  padding: 30px 10px 10px 10px;
+  outline: none;
   color: white;
   font-size: 14px;
 }
-input::-webkit-input-placeholder{
-  color:#ddd;
+
+input::-webkit-input-placeholder {
+  color: #ddd;
   font-size: 14px;
 }
-input::-moz-placeholder{
-  color:#ddd;
-  font-size: 14px;
-}/* Firefox 19+ */
-input:-moz-placeholder{
-  color:#ddd;
-  font-size: 14px;
-}/* Firefox 18- */
-input:-ms-input-placeholder{
-  color:#ddd;
+
+input::-moz-placeholder {
+  color: #ddd;
   font-size: 14px;
 }
-form>#checkboxContainer{
-  padding-top: 50px;
+
+/* Firefox 19+ */
+
+input:-moz-placeholder {
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* Firefox 18- */
+
+input:-ms-input-placeholder {
+  color: #ddd;
+  font-size: 14px;
+}
+
+form>#checkboxContainer {
+  width: 91%;
+  padding-top: 27px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .container {
-    width: 43%;
-    position: relative;
-    padding-left: 7%;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  min-width: 140px;
+  width: 43%;
+  position: relative;
+  padding-top: 8px;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
 .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    background-color: rgb(58,58,66);
+  position: absolute;
+  left: 0px;
+  height: 18px;
+  width: 18px;
+  background-color: rgb(58, 58, 66);
 }
-.container:hover input ~ .checkmark {
-    background-color: #ddd;
+
+.container:hover input~.checkmark {
+  background-color: #ddd;
 }
-.container input:checked ~ .checkmark {
-    background-color: #ddd;
+
+.container input:checked~.checkmark {
+  background-color: #ddd;
 }
 
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-.container input:checked ~ .checkmark:after {
-    display: block;
-}
-.container .checkmark:after {
-    left: 6px;
-    top: 3px;
-    width: 4px;
-    height: 7px;
-    border: solid rgb(58,58,66);
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-#sendMessage{
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 7px;
+  border: solid rgb(58, 58, 66);
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#sendMessage {
   align-self: flex-start;
   font-weight: bold;
   font-size: 14px;
@@ -183,103 +219,126 @@ form>#checkboxContainer{
   border: none;
   margin-top: 50px;
   padding: 13px 20px;
-  background: linear-gradient(to right, rgb(135,52,88), rgb(94,42,90));
+  background: linear-gradient(to right, rgb(135, 52, 88), rgb(94, 42, 90));
   text-decoration: none;
 }
-.rightHalf>.contact{
+
+
+
+.close {
   position: absolute;
-  font-family: "HurmeGeometricSans-Bold";
-  font-size: 180px;
-  top: 600px;
-  left: 107px;
-  opacity: 0.03;
-  z-index: -1;
-}
-.close{
-  position: absolute;
-  top: 60px;
-  right: 40px;
-  width: 30px;
-  height: 30px;
+  padding-top: 3%;
+  right: 3%;
+  width: 3%;
+  height: auto;
+  min-height: 15px;
+  max-height: 30px;
+  min-width: 15px;
+  max-width: 30px;
   cursor: default;
-}
-.close>span, .close>span:before{
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  margin-top: -1.5px;
+  z-index: 2;
 }
 
-.close>span{
+.close>span,
+.close>span:before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.close>span {
   transform: translateY(25px) rotate(45deg);
 }
-.close>span:before{
+
+.close>span:before {
   content: "";
   transform: rotate(90deg);
 }
-.img_earth{
+
+.img_earth {
   position: absolute;
   top: 30px;
-  left: 220px;
-  width: 350px;
-  height: 350px;
+  right: 20px;
+  width: 50%;
+  height: 50%;
   z-index: -1;
-  background-size: cover;
   background-image: url('../img/earth.png');
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-position: right top;
 }
-.star-background{
+
+.star-background {
   position: absolute;
   z-index: -2;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-image: url('../img/star-background.png');
 }
-.rightHalf>.background{
+
+.rightHalf>.background {
   position: absolute;
-  z-index:-3;
-  background-color: rgb(31,31,41);
-  top:0;
+  z-index: -3;
+  background-color: rgb(31, 31, 41);
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
 
 .block {
-    border: 1px solid grey;
-    position: absolute;
-    background: white;
-    padding: 5px;
-    color: #000;
-    min-height: 26px;
-    width: 400px;
-    box-shadow: 0 0 7px #000; /* Добавляем тень для блока */
-   }
-.block::after, .block::before {
-    content: '';
-    position: absolute;
-    background: white;
-    left: 35px; top: -6px;
-    width: 12px; height: 12px;
-    box-shadow: 0 -5px 5px -5px #000; /* Добавляем тень для уголка */
-    z-index: -1; /* Прячем за основным блоком */
-    transform: rotate(45deg); /* Поворачиваем на 45º */
-    -webkit-transform: rotate(45deg);
-  }
-.block::before {
-    z-index: 1; /* Накладываем поверх, чтобы скрыть следы тени */
-    box-shadow: none; /* Прячем тень */
-   }
-.block>img{
-      position:   absolute;
-      top:5px;
-      left:  5px;
-      width: 26px;
+  border: 1px solid grey;
+  position: absolute;
+  background: white;
+  padding: 5px;
+  color: #000;
+  min-height: 26px;
+  width: calc(35% + 100px);
+  box-shadow: 0 0 7px #000;
+  z-index: 2;
+  /* Добавляем тень для блока */
 }
-.block>p{
-      margin-left: 36px;
-      font-size: 14px;
+.block:hover{
+  z-index: 3;
+}
+.block::after,
+.block::before {
+  content: '';
+  position: absolute;
+  background: white;
+  left: 35px;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 -5px 5px -5px #000;
+  /* Добавляем тень для уголка */
+  z-index: -1;
+  /* Прячем за основным блоком */
+  transform: rotate(45deg);
+  /* Поворачиваем на 45º */
+  -webkit-transform: rotate(45deg);
+}
+
+.block::before {
+  z-index: 1;
+  /* Накладываем поверх, чтобы скрыть следы тени */
+  box-shadow: none;
+  /* Прячем тень */
+}
+
+.block>img {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 26px;
+}
+
+.block>p {
+  margin-left: 36px;
+  font-size: 11px;
+  text-align: justify;
 }

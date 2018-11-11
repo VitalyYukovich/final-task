@@ -1,25 +1,28 @@
-
 html{
-  height: 100vh;
+  min-height: 100vh;
 }
+
 body {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 }
- .main{
+
+.main{
  	display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 85%;
+  width: 100%;
+  min-height: 100%;
+  margin: 0px calc(5px + 5%) 95px calc(5px + 5%);
  }
  .overlay {
   top:-100%;
   height: 200%;
-  background: radial-gradient(#5e3148, #290e21);
+  background: radial-gradient(#5e3148, #290e21) ;
 }
  .icon{
   fill: #777;
@@ -30,21 +33,42 @@ body {
 .cards{
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+  max-width: 1100px;
+  max-height: 900px;
+  height: 80%;
 }
 .card{
-  box-sizing: border-box;
-  height: 350px;
-  width: 50%;
+  height: 50%;
+  width: 46%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  position: relative;
+  padding: 2%;
+  overflow: hidden;
+}
+.card>.img{
+  width: 21%;
+  height: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card1{
+  background-image: url('../img/1.png');
+}
+.card2{
+  background-image: url('../img/2.png');
+}
+.card3{
+  background-image: url('../img/3.png');
+}
+.card4{
+  background-image: url('../img/4.png');
 }
 .card>p{
   font-family: HurmeGeometricSans-Bold;
-  font-size:  30px;
-  margin: 15px 0px 35px 0px;
+  margin: 5% 0px 3% 0px;
 }
 .card>.text{
   display: flex;
@@ -52,15 +76,11 @@ body {
   align-items: center;
 }
 .text>span{
-  color: white;
-  font-size: 22px;
-  word-wrap: normal;
+  color: white; 
+  text-align: center;
   opacity: 0;
   transform: translateY(-50px);
 
-}
-p{
-  transform: matrix(1,0,0,1,0,0);
 }
 .card:nth-child(1) span:nth-child(1){
     animation-delay: .25s;
@@ -105,17 +125,16 @@ p{
   font-family: HurmeGeometricSans-Bold;
   font-weight: 900;
   color: white;
-  font-size: 350px;
+  font-size: 300px;
   position: absolute;
-  align-self: flex-end;
   opacity: 0.25;
-  margin-top: -40px;
+  bottom: -78.5px;
 }
 .orange>.backgroundNumber{
-  margin-left: 20px;
+ right: -10.4px
 }
 .blue>.backgroundNumber{
-  margin-left: 35px;
+  right: -18.5px
 }
 
 .whiteColorFont{
