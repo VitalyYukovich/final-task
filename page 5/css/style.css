@@ -342,3 +342,6 @@ form>#checkboxContainer {
   font-size: 11px;
   text-align: justify;
 }
+.pages .page.active:after{
+  content: "page 5";
+}

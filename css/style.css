@@ -26,6 +26,7 @@
 .symbol {
   position:absolute;
   z-index:-1;
+  transition: 2s;
  }
 
 .menu{
@@ -94,16 +95,42 @@ a.active{
   transform: scale(1.1);
   transition-duration: .5s;
 }
-
+.pages{
+  position: absolute;
+  width: 40px;
+  bottom: 5%;
+  right: 3.8%;
+}
+.pages .page{
+  height: 3px;
+  width: 50px;
+  background-color: #aaa;
+  margin-bottom: 7px;
+  float: right;
+}
+.pages .page.active{
+  width: 65px;
+}
+.pages .page.active:after{
+  position: absolute;
+  transform: translate(-60px,-10px);
+  color: #ddd;
+}
+.pages .page:hover:not(.active){
+  width: 60px;
+  background-color: #ddd;
+  transition: 0.5s;
+}
 .animate{
     float: left;
-    animation-name: titleAnimation;
+    animation-name: textAnimation;
     animation-timing-function:ease;
     animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
 }
 
-@keyframes titleAnimation {
+
+@keyframes textAnimation {
     0% {
       transform: translateY(-50px);
       opacity: 0;
@@ -117,6 +144,10 @@ a.active{
       clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0%);
   }
 }
+
+
+
+
 
 @font-face {
 

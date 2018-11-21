@@ -153,3 +153,6 @@ body {
   transform: scale(1.05);
   transition-duration: .5s;
 }
+.pages .page.active:after{
+  content: "page 2"
+}

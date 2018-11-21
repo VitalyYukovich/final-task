@@ -66,3 +66,6 @@ body {
   bottom: 4px;
   right: 0px;
 }
+.pages .page.active:after{
+  content: "page 6";
+}

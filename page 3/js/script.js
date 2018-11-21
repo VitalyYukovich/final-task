@@ -5,7 +5,7 @@ var sliderUlWidth;
 var minHeight=550;;//>minHeight?$('.main').height()*0.7:minHeight
 jQuery(document).ready(function ($) {
     $('#slider ul li').height(650);
-    $('#slider ul li').width($('.main').width());
+    $('#slider ul li').width($('.main').width()*0.6);
 
     resizeFont('.slide', '.caption', 30, 40);
     resizeFont('.slide', '.description',15, 200);
@@ -59,25 +59,19 @@ jQuery(document).ready(function ($) {
     });
 
 });   
-function resizeFont(parent, elem, defaultSize, speedChange){
-    var fontSize = $(parent).width()/speedChange+defaultSize;
-    $(elem).css({
-        'font-size':$(parent).width()/speedChange+defaultSize+'px',
-    });
-    return fontSize;
-} 
+
 $(window).resize(function(event) {
 
-    $('#slider ul li').width($('.main').width());
+    $('#slider ul li').width($('.main').width()*0.6);
 
     slideCount = $('#slider ul li').length;
     slideWidth = $('#slider ul li').width();
     slideHeight = $('#slider ul li').height();
     sliderUlWidth = slideCount * slideWidth;
 
-    $('#slider').width($('#slider ul li').width());
+    $('#slider').width(slideWidth);
     $('#slider ul').css({
-        'marginLeft':-$('.main').width(),
+        'marginLeft':-slideWidth,
         'width': sliderUlWidth
     });
 

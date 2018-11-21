@@ -6,7 +6,7 @@ body {
   display: flex;
   position: relative;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   min-height: 100vh;
 }
@@ -17,6 +17,7 @@ body {
  	display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 85%;
 }
 .about{
   position: absolute;
@@ -36,4 +37,7 @@ body {
 }
 .icon:hover{
   fill: #aaa;
+}
+.pages .page.active:after{
+  content: "page 1"
 }
